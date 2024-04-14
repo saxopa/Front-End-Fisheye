@@ -45,6 +45,14 @@ h1 {
 }
 
 .photographer_section article img {
+    border-radius: 50%;
     height: 200px;
     width: 200px;
+}
+article p{
+    margin:0;
+}
+/*J'utilise ça ou une classe ?*/
+article :nth-child(3){
+    color: red;
 }
