@@ -22,6 +22,7 @@ async function init() {
   displayData(photographers);
 }
 
+
 init();
 
 
