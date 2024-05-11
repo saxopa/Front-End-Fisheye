@@ -79,3 +79,23 @@ form input {
 .fa-heart{
     color: red;
 }
+img,video{
+    height:100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.container-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+.card{
+    width: 23%;
+
+}
+.card-video,.card-img-top{
+    width: 100%;
+}

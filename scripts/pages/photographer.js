@@ -13,16 +13,17 @@ console.log(id)
 photographerService.getDetailsPhotographer(id)
   .then(photographer => {
     if (photographer) {
-      // Faites quelque chose avec les détails du photographe
       console.log("Détails du photographe :", photographer);
-      // Faire l'affichage en passant par des factory.
-      const cardfactory = new Cardfactory();
-      photographer.media.forEach( media  => {
-        cardfactory.generateCard(media);
-
-        
-     });
-      // Appel de la factory ici pour utiliser les détails du photographe
+      const cardFactory = new Cardfactory();
+      const cardsContainer = document.getElementById('main');
+      const name = photographer.details.name;
+      const cardElement = document.createElement('div');
+      cardElement.setAttribute('class', 'container-cards');
+      photographer.media.forEach(media => {
+        const cardHtml = cardFactory.generateCard(media, name);
+        cardElement.innerHTML += cardHtml;
+      });
+      cardsContainer.appendChild(cardElement); // Déplacez cet ajout à l'extérieur de la boucle forEach
     } else {
       console.log("Aucun photographe trouvé avec cet ID :", id);
     }
