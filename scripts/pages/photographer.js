@@ -1,4 +1,5 @@
 import PhotographerService from '../services/photographerservice.js';
+import { Cardfactory } from '../factories/card.js';
 
 // Création d'une instance de PhotographerService
 const photographerService = new PhotographerService();
@@ -15,6 +16,12 @@ photographerService.getDetailsPhotographer(id)
       // Faites quelque chose avec les détails du photographe
       console.log("Détails du photographe :", photographer);
       // Faire l'affichage en passant par des factory.
+      const cardfactory = new Cardfactory();
+      photographer.media.forEach( media  => {
+        cardfactory.generateCard(media);
+
+        
+     });
       // Appel de la factory ici pour utiliser les détails du photographe
     } else {
       console.log("Aucun photographe trouvé avec cet ID :", id);
@@ -23,3 +30,5 @@ photographerService.getDetailsPhotographer(id)
   .catch(error => {
     console.error("Une erreur s'est produite lors de la récupération des détails du photographe :", error);
   });
+
+  
