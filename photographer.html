@@ -27,13 +27,17 @@
           onclick="displayModal()"
           >Contactez-moi</button
         >
-        <img id="img-photographer">
+        <img id="img-photographer" />
       </div>
     </main>
     <div id="contact_modal">
       <div class="modal">
         <header>
-          <h2>Contactez-moi</h2>
+          <div>
+            <h2>Contactez-moi</h2>
+            <p id="modal-nom-photographe"></p>
+          </div>
+
           <img
             src="assets/icons/close.svg"
             aria-label="fermer le formulaire de contact"
@@ -43,7 +47,13 @@
         <form>
           <div>
             <label>Prénom</label>
+            <input id="champ-prénom" />
+            <label>Nom</label>
             <input id="champ-nom" />
+            <label>Email</label>
+            <input id="champ-mail" />
+            <label>Votre message</label>
+            <input id="champ-message" />
           </div>
           <button
             aria-label="envoyer formulaire de contact"

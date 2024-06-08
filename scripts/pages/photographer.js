@@ -21,6 +21,10 @@ photographerService
       const cardElement = document.createElement("div");
       cardElement.setAttribute("class", "container-cards");
 
+      //Nom modal 
+      let modalNomPhotographe = document.getElementById("modal-nom-photographe");
+      modalNomPhotographe.innerText = name
+
       //Infos texte photographe
       const NamePhotographer = document.getElementById("name-photographer");
       NamePhotographer.innerText = name;
@@ -40,7 +44,7 @@ photographerService
         const cardHtml = cardFactory.generateCard(media, name);
         cardElement.innerHTML += cardHtml;
       });
-      cardsContainer.appendChild(cardElement); // Déplacez cet ajout à l'extérieur de la boucle forEach
+      cardsContainer.appendChild(cardElement);
     } else {
       console.log("Aucun photographe trouvé avec cet ID :", id);
     }
@@ -59,3 +63,4 @@ photographerService
     e.preventDefault();
    console.log("coucou")
  });
+
