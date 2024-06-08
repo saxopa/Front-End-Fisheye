@@ -2,9 +2,12 @@
 <html>
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
     <title>Fisheye - photographe </title>
   </head>
   <body>
@@ -13,28 +16,49 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <h1 id="">a</h1>
-        <button class="contact_button" aria-label="ouvrir le formulaire de contact" onclick="displayModal()">Contactez-moi</button>
+        <div class="infos-text-photographer">
+          <h1 id="name-photographer"></h1>
+          <p id="city-photographer"></p>
+          <p id="tagline-photographer"></p>
+        </div>
+        <button
+          class="contact_button"
+          aria-label="ouvrir le formulaire de contact"
+          onclick="displayModal()"
+          >Contactez-moi</button
+        >
+        <img id="img-photographer">
       </div>
     </main>
     <div id="contact_modal">
-			<div class="modal">
-				<header>
+      <div class="modal">
+        <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" aria-label="fermer le formulaire de contact" onclick="closeModal()" />
+          <img
+            src="assets/icons/close.svg"
+            aria-label="fermer le formulaire de contact"
+            onclick="closeModal()"
+          />
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button aria-label="envoyer formulaire de contact" class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
+        <form>
+          <div>
+            <label>Prénom</label>
+            <input id="champ-nom" />
+          </div>
+          <button
+            aria-label="envoyer formulaire de contact"
+            class="contact_button"
+            >Envoyer</button
+          >
+        </form>
+      </div>
+    </div>
     <i class="fa-solid fa-heart"></i>
     <script type="module" src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
-    <script src="https://kit.fontawesome.com/09c7740df2.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/09c7740df2.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

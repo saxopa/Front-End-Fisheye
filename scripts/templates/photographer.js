@@ -11,14 +11,21 @@ function photographerTemplate(data) {
         img.setAttribute("src", picture);
         const h2 = document.createElement('h2');
         h2.textContent = name;
+
         const pCountry = document.createElement('p');
         pCountry.textContent = country;
+        pCountry.setAttribute("class", "p-country");
         const pCity = document.createElement('p');
         pCity.textContent = city;
+        pCity.setAttribute("class", "p-city");
         const pTagline = document.createElement('p');
         pTagline.textContent = tagline;
+        pTagline.setAttribute("class", "p-tagline");
+
         const pPrice = document.createElement('p');
         pPrice.textContent = price;
+        pPrice.setAttribute("class", "p-price");
+
 
         liens.appendChild(article);
         article.appendChild(img);

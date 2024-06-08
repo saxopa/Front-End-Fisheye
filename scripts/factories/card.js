@@ -1,34 +1,32 @@
 export class Cardfactory {
-    generateCard(data, name) {
-      if (data.image) {
-        return `
-          <div class="card"> 
-            <img class="card-img-top" src="assets/images/sample photos/${name}/${data.image}"" />
-            <div>
-              <h2>${data.title}</h2> 
-              <div>
-                <span>${data.likes}</span>
-                <i class="fa-solid fa-heart"></i>
-              </div>
-            </div>
-          </div>`;
-      } else if (data.video) {
-        return `    
-          <div> 
-            <video class="card-video" controls>
-              <source src="assets/images/sample photos/${name}/${data.video}" type="video/mp4" />
-            </video>
-            <div>
-              <h2>${data.title}</h2> 
-              <div>
-                <span>${data.likes}</span>
-                <i class="fa-solid fa-heart"></i>
-              </div>
-            </div>
-          </div>`;
-      } else {
-        throw "Unknown type format";
-      }
+  generateCard(data, name) {
+
+    let goodName = name.replace("-", ' ');
+
+    if(!data.video && !data.image ){
+      throw "Unknown type format";
     }
+
+    let resultat = `<div class="card">`;
+    if (data.image) {
+      resultat += `
+            <img class="card-img-top" src="assets/images/sample-photos/${goodName}/${data.image}" />
+           `;
+    } else {
+      resultat += `    
+            <video class="card-video" controls>
+              <source src="assets/images/sample-photos/${goodName}/${data.video}" type="video/mp4" />
+            </video>
+          `;
+    }  
+    resultat += `<div class="card-div-bottom">
+      <h2>${data.title}</h2> 
+      <div >
+        <span>${data.likes}</span>
+        <i class="fa-solid fa-heart"></i>
+      </div>
+    </div>
+  </div>`;
+    return resultat;
   }
-  
+}
