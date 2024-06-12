@@ -56,11 +56,4 @@ photographerService
     );
   });
 
-  let buttonModal = document.getElementsByClassName("contact_button")[1];
-
-
-  buttonModal.addEventListener("click", (e) => {
-    e.preventDefault();
-   console.log("coucou")
- });
-
+  

@@ -1,6 +1,6 @@
 #contact_modal {
   display: none;
-  position: absolute;
+  position: fixed;
   background-color: hsl(0, 3%, 19%);
   height: 100vh;
   top: 0;
@@ -8,6 +8,7 @@
   width: 100%;
   padding-top: 5%;
   margin-left: auto;
+  overflow: hidden;
 }
 
 .photograph-header {
@@ -20,8 +21,11 @@
   margin: 0 auto;
 }
 .photograph-header img {
-  border-radius: 50px;
+  border-radius: 25%;
   width: 100px;
+  height: 100px;
+
+
 }
 
 .contact_button {
@@ -96,9 +100,10 @@ form input {
 }
 .card > img,
 video {
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .container-cards {
@@ -107,7 +112,7 @@ video {
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 90%;
-  margin: 0 auto;
+  margin: 30px auto 0 auto;
 }
 .card {
   width: 22%;
