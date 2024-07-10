@@ -1,5 +1,7 @@
 export class Cardfactory {
   generateCard(data, name) {
+    
+
 
     let goodName = name.replace("-", ' ');
 
