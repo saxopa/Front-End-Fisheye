@@ -1,30 +1,45 @@
-// Script pour gérer le carrousel
-let currentMediaIndex = 0;
-let mediaArray = [];
+export class Lightboxfactory {
+    constructor(mediaArray, name) {
+        this.mediaArray = mediaArray;
+        this.currentMediaIndex = 0;
+        this.name = name; 
+    }
 
-function showCarousel(index) {
-  const modal = document.getElementById("image-carousel");
-  const imgElement = document.getElementById("carousel-image");
+    showCarousel(index) {
+        const modal = document.getElementById("image-carousel");
+        const imgElement = document.getElementById("carousel-image");
+        const videoElement = document.getElementById("carousel-video");
 
-  imgElement.src = mediaArray[index].src;
-  modal.style.display = "block";
-  currentMediaIndex = index;
+        const media = this.mediaArray[index];
+        let goodName = this.name.replace("-", ' ');
+
+        if (media.image) {
+            imgElement.src = `assets/images/sample-photos/${goodName}/${media.image}`;
+            imgElement.style.display = "block";
+            videoElement.style.display = "none";
+        } else if (media.video) {
+            videoElement.src = `assets/images/sample-photos/${goodName}/${media.video}`;
+            videoElement.style.display = "block";
+            imgElement.style.display = "none";
+        } else {
+            throw "Unknown media format";
+        }
+
+        modal.style.display = "block";
+        this.currentMediaIndex = index;
+    }
+
+    closeCarousel() {
+        document.getElementById("image-carousel").style.display = "none";
+    }
+
+    showNextMedia() {
+        this.currentMediaIndex = (this.currentMediaIndex + 1) % this.mediaArray.length;
+        this.showCarousel(this.currentMediaIndex);
+    }
+
+    showPrevMedia() {
+        this.currentMediaIndex = (this.currentMediaIndex - 1 + this.mediaArray.length) % this.mediaArray.length;
+        this.showCarousel(this.currentMediaIndex);
+    }
 }
-
-function closeCarousel() {
-  document.getElementById("image-carousel").style.display = "none";
-}
-
-function showNextMedia() {
-  currentMediaIndex = (currentMediaIndex + 1) % mediaArray.length;
-  showCarousel(currentMediaIndex);
-}
-
-function showPrevMedia() {
-  currentMediaIndex = (currentMediaIndex - 1 + mediaArray.length) % mediaArray.length;
-  showCarousel(currentMediaIndex);
-}
-
-document.querySelector(".close-carousel").onclick = closeCarousel;
-document.querySelector(".next").onclick = showNextMedia;
-document.querySelector(".prev").onclick = showPrevMedia;

@@ -1,61 +1,71 @@
 /* CSS pour le carrousel */
 .carousel {
-    display: none; /* Caché par défaut */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: #000000e6; /* Fond semi-transparent */
-  }
-  
-  .carousel-content {
-    position: relative;
-    margin: auto;
-    padding: 0;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-  }
-  
-  #carousel-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .close-carousel {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: bold;
-  }
-  
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
-    user-select: none;
-  }
-  
-  .prev {
-    left: 0;
-  }
-  
-  .next {
-    right: 0;
-  }
-  
-  .prev:hover, .next:hover {
-    background-color: #000000cc;
-  }
-  
+  display: none; /* Caché par défaut */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000000e6; /* Fond semi-transparent */
+}
+
+.carousel-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+}
+
+#carousel-image {
+  max-width: 100%;
+  max-height: 80vh; /* 80% de la hauteur de la fenêtre */
+  object-fit: contain;
+  margin: 0 auto;
+}
+#carousel-video{
+  max-width: 100%;
+  max-height: 80vh; /* 80% de la hauteur de la fenêtre */
+  object-fit: cover;
+
+}
+
+.close-carousel {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+  z-index: 1001; /* Assurez-vous que le bouton de fermeture est au-dessus de l'image */
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  user-select: none;
+  z-index: 1001; /* Assurez-vous que les boutons sont au-dessus de l'image */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: #000000cc;
+}
