@@ -2,6 +2,7 @@ import PhotographerService from "../services/photographerservice.js";
 import { Cardfactory } from "../factories/card.js";
 import { Lightboxfactory } from "../factories/lightbox.js";
 
+
 // Création d'une instance de PhotographerService
 const photographerService = new PhotographerService();
 
