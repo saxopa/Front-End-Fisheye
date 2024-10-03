@@ -27,9 +27,11 @@ export class Lightboxfactory {
 
         modal.style.display = "block";
         this.currentMediaIndex = index;
+        
     }
 
     closeCarousel() {
+        
         document.getElementById("image-carousel").style.display = "none";
     }
 

@@ -1,3 +1,14 @@
-@media only screen and (max-with:){
+@media only screen and (max-with:1000px){
+
+ .container-cards{
+    width:100%
+  }
+  .card{
+    width: 100%;
+  }
+
+    #container-likes-tarif{
+        width:400px
+    }
     
 }

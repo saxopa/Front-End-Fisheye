@@ -1,4 +1,4 @@
-@import url(photographermobile.css);
+@import url("photographermobile.css");
 #contact_modal {
   display: none;
   position: fixed;
@@ -19,6 +19,7 @@
   background-color: #fafafa;
   height: 300px;
   width: 90%;
+  max-width:1400px;
   margin: 0 auto;
 }
 .photograph-header img {
