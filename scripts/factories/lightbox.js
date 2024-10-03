@@ -1,6 +1,6 @@
 export class Lightboxfactory {
     constructor(mediaArray, name) {
-        this.mediaArray = mediaArray;
+        this.mediaArray = mediaArray.media;
         this.currentMediaIndex = 0;
         this.name = name; 
     }

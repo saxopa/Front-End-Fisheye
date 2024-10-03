@@ -2,7 +2,7 @@
 <html>
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="css/lightbox.css" />
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link
@@ -30,9 +30,25 @@
         >
         <img id="img-photographer" />
       </div>
+
+      <div class="section-filter">
+        <h3 id="sort-heading">Trier par</h3>
+        <div class="dropdown">
+          <button id="button-trier" aria-haspopup="listbox" aria-expanded="false">
+            <span id="current-sort">Popularité</span>
+            <span class="sr-only">(sélectionner pour modifier)</span>
+          </button>
+          <ul id="sort-options">
+            <li><button data-sort="likes">Popularité</button></li>
+            <li><button data-sort="date">Date</button></li>
+            <li><button data-sort="title">Titre</button></li>
+          </ul>
+        </div>
+      </div>
     </main>
+
     <div aria-hidden="false" id="contact_modal">
-      <div class="modal" role=”dialog” aria-hidden="true">
+      <div class="modal" role="”dialog”" aria-hidden="true">
         <header>
           <div>
             <h2>Contactez-moi</h2>
@@ -40,7 +56,7 @@
           </div>
 
           <img
-          id="close-button"
+            id="close-button"
             src="assets/icons/close.svg"
             aria-label="fermer le formulaire de contact"
             onclick="closeModal()"
@@ -67,16 +83,29 @@
     </div>
 
     <div id="image-carousel" class="carousel">
-      <span class="close-carousel" onclick="lightbox.closeCarousel()">&times;</span>
+      <span class="close-carousel" onclick="lightbox.closeCarousel()"
+        >&times;</span
+      >
       <div class="carousel-content">
-          <img id="carousel-image" src="" alt="Photographer media" style="display: none;" />
-          <video id="carousel-video" controls style="display: none;"></video>
+        <img
+          id="carousel-image"
+          src=""
+          alt="Photographer media"
+          style="display: none"
+        />
+        <video id="carousel-video" controls style="display: none"></video>
       </div>
       <a class="prev" onclick="lightbox.showPrevMedia()">&#10094;</a>
       <a class="next" onclick="lightbox.showNextMedia()">&#10095;</a>
-  </div>
-      
-    <i class="fa-solid fa-heart"></i>
+    </div>
+
+    <div id="container-likes-tarif">
+      <div class="container-like">
+        <p id="like-number">A faire</p>
+        <i class="fa fa-heart"></i>
+      </div>
+      <p id="tarif"></p>
+    </div>
     <script type="module" src="/scripts/pages/photographer.js"></script>
     <script type="module" src="/scripts/factories/lightbox.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
