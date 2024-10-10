@@ -7,6 +7,7 @@ function displayData(photographers) {
 
   photographers.forEach((photographer) => {
     // Crée le template
+    // eslint-disable-next-line no-undef
     const photographerModel = photographerTemplate(photographer);
     // Crée le userCardDOM
     const userCardDOM = photographerModel.getUserCardDOM();

@@ -52,6 +52,8 @@ async function main() {
         containerLikesTarif.appendChild(tarifElement);
       }
 
+
+      await updateTotalLikes(id)
       await updateMediaDisplay('likes');
 
       const buttonTrier = document.querySelector(".dropdown > button");
@@ -91,6 +93,20 @@ async function main() {
       if (closeButton) closeButton.onclick = () => lightbox.closeCarousel();
       if (nextButton) nextButton.onclick = () => lightbox.showNextMedia();
       if (prevButton) prevButton.onclick = () => lightbox.showPrevMedia();
+
+      document.addEventListener('keydown', (event) => {
+        switch(event.key) {
+          case 'ArrowLeft':
+            if (prevButton) lightbox.showPrevMedia();
+            break;
+          case 'ArrowRight':
+            if (nextButton) lightbox.showNextMedia();
+            break;
+          case 'Escape':
+            if (closeButton) lightbox.closeCarousel();
+            break;
+        }
+      });
 
     } else {
       console.log("Aucun photographe trouvé avec cet ID :", id);
