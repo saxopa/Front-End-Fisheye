@@ -23,6 +23,8 @@ function closeModal() {
   openModalBtn.focus();
 }
 
+
+
 // Ouvrir la modal au clic sur le bouton
 openModalBtn.addEventListener('click', displayModal);
 
